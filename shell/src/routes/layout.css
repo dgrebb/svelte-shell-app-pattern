@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+main {
+	@apply p-4;
+}

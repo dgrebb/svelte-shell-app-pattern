@@ -1,0 +1,17 @@
+{
+  "name": "@acme/feature-beta",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./App.svelte": "./src/App.svelte"
+  },
+  "dependencies": {
+    "pluralize": "^8.0.0"
+  },
+  "devDependencies": {
+    "@acme/state": "workspace:*",
+    "@acme/ui": "workspace:*"
+  }
+}

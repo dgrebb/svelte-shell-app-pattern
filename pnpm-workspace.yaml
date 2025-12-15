@@ -1,0 +1,6 @@
+packages:
+  - "shell"
+  - "apps/*"
+  - "packages/*"
+onlyBuiltDependencies:
+  - esbuild

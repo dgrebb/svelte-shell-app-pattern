@@ -1,0 +1,14 @@
+import { error } from '@sveltejs/kit';
+import { env } from '$env/dynamic/public';
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async () => {
+	const enabled = new Set(
+		(env.PUBLIC_ENABLED_APPS ?? '')
+			.split(',')
+			.map((s) => s.trim())
+			.filter(Boolean)
+	);
+	if (!enabled.has('alpha')) throw error(404);
+	return { appId: 'alpha' as const };
+};
