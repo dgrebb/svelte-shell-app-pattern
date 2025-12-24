@@ -3,6 +3,11 @@
 		"target": "ESNext",
 		"module": "ESNext",
 		"moduleResolution": "bundler",
+		"baseUrl": ".",
+		"paths": {
+			"src/lib/utils": ["packages/ui/src/lib/utils/index.ts"],
+			"src/lib/utils.js": ["packages/ui/src/lib/utils/index.ts"]
+		},
 		"resolveJsonModule": true,
 		"allowJs": true,
 		"checkJs": true,
