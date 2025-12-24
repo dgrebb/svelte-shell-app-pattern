@@ -9,32 +9,43 @@
 	let { teams }: { teams: { name: string; logo: any; plan: string }[] } = $props();
 	const sidebar = Sidebar.useSidebar();
 
-	let activeTeam = $state(teams[0]);
+	const defaultTeam = $derived(teams[0]);
+	let activeTeam = $state<{ name: string; logo: any; plan: string } | null>(null);
+
+	$effect(() => {
+		// Initialize or update if current activeTeam is not in teams
+		if (!activeTeam || !teams.some((team) => team.name === activeTeam!.name)) {
+			activeTeam = defaultTeam;
+		}
+	});
 </script>
 
 <Sidebar.Menu>
 	<Sidebar.MenuItem>
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger>
-					{#snippet child({ props }: { props: any })}
-					<Sidebar.MenuButton
-						{...props}
-						size="lg"
-						class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-					>
-						<div
-							class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
+				{#snippet child({ props }: { props: any })}
+					{#if activeTeam}
+						{@const Logo = activeTeam.logo}
+						<Sidebar.MenuButton
+							{...props}
+							size="lg"
+							class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
 						>
-							<activeTeam.logo class="size-4" />
-						</div>
-						<div class="grid flex-1 text-start text-sm leading-tight">
-							<span class="truncate font-medium">
-								{activeTeam.name}
-							</span>
-							<span class="truncate text-xs">{activeTeam.plan}</span>
-						</div>
-						<ChevronsUpDownIcon class="ms-auto" />
-					</Sidebar.MenuButton>
+							<div
+								class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
+							>
+								<Logo class="size-4" />
+							</div>
+							<div class="grid flex-1 text-start text-sm leading-tight">
+								<span class="truncate font-medium">
+									{activeTeam.name}
+								</span>
+								<span class="truncate text-xs">{activeTeam.plan}</span>
+							</div>
+							<ChevronsUpDownIcon class="ms-auto" />
+						</Sidebar.MenuButton>
+					{/if}
 				{/snippet}
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content

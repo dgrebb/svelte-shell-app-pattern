@@ -12,8 +12,8 @@
 	let msg = $state(shell.teamMessage);
 	let count = $derived(shell.teamUpdateCount);
 
-	function publish(event: SubmitEvent) {
-		event.preventDefault();
+	function publish(e: SubmitEvent) {
+		e.preventDefault();
 		shell.updateTeamStatus({ message: msg, updatedBy: 'Beta' });
 	}
 </script>

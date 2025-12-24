@@ -167,18 +167,20 @@
 		...restProps
 	}: Props = $props();
 
-	const shell = shellProp ?? getContext<ShellState>('shell');
-	const enabled = enabledProp ?? new SvelteSet(Object.keys(FEATURES) as AppId[]);
+	const shell = $derived(shellProp ?? getContext<ShellState>('shell'));
+	const enabled = $derived(enabledProp ?? new SvelteSet(Object.keys(FEATURES) as AppId[]));
 
-	const items = (Object.keys(FEATURES) as AppId[])
-		.filter((id) => enabled.has(id as AppId))
-		.map((id) => ({
-			title: FEATURES[id].title,
-			route: FEATURES[id].route,
-			icon: FEATURES[id]?.icon,
-			isActive: shell.activeAppId === id,
-			items: []
-		}));
+	const items = $derived(
+		(Object.keys(FEATURES) as AppId[])
+			.filter((id) => enabled.has(id as AppId))
+			.map((id) => ({
+				title: FEATURES[id].title,
+				route: FEATURES[id].route,
+				icon: FEATURES[id]?.icon,
+				isActive: shell.activeAppId === id,
+				items: []
+			}))
+	);
 </script>
 
 <Sidebar.Root {collapsible} {...restProps}>

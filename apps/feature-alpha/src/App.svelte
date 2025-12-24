@@ -41,7 +41,8 @@
 		};
 	});
 
-	function publish() {
+	function publish(e: SubmitEvent) {
+		e.preventDefault();
 		shell.updateTeamStatus({ message: msg, updatedBy: 'Alpha' });
 	}
 </script>
