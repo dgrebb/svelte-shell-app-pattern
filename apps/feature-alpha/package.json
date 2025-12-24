@@ -1,18 +1,24 @@
 {
-  "name": "@acme/feature-alpha",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts",
-    "./App.svelte": "./src/App.svelte"
-  },
-  "dependencies": {
-    "chart.js": "^4.5.1",
-    "date-fns": "^4.1.0"
-  },
-  "devDependencies": {
-    "@acme/state": "workspace:*",
-    "@acme/ui": "workspace:*"
-  }
+	"name": "@acme/feature-alpha",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./App.svelte": "./src/App.svelte"
+	},
+	"scripts": {
+		"format": "pnpm -w exec prettier --write \"$PNPM_SCRIPT_SRC_DIR\"",
+		"lint": "pnpm -w exec prettier --check \"$PNPM_SCRIPT_SRC_DIR\" ; pnpm -w exec eslint --format stylish --max-warnings 0 \"$PNPM_SCRIPT_SRC_DIR\"",
+		"check": "pnpm -w exec svelte-check --workspace \"$PNPM_SCRIPT_SRC_DIR\" --tsconfig \"$PNPM_SCRIPT_SRC_DIR/tsconfig.json\""
+	},
+	"dependencies": {
+		"chart.js": "^4.5.1",
+		"date-fns": "^4.1.0"
+	},
+	"devDependencies": {
+		"@acme/state": "workspace:*",
+		"@acme/ui": "workspace:*",
+		"svelte": "catalog:"
+	}
 }
