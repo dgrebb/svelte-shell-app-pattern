@@ -24,6 +24,7 @@
 	"devDependencies": {
 		"@eslint/compat": "catalog:",
 		"@eslint/js": "catalog:",
+		"@tailwindcss/vite": "catalog:",
 		"eslint": "catalog:",
 		"eslint-config-prettier": "catalog:",
 		"eslint-plugin-svelte": "catalog:",
@@ -33,6 +34,9 @@
 		"prettier-plugin-tailwindcss": "catalog:",
 		"svelte": "catalog:",
 		"svelte-check": "catalog:",
+		"tailwindcss": "catalog:",
+		"tailwind-variants": "catalog:",
+		"tw-animate-css": "catalog:",
 		"typescript": "catalog:",
 		"typescript-eslint": "catalog:"
 	}

@@ -50,18 +50,21 @@
 		"shad": "pnpm dlx shadcn-svelte@latest add --cwd \"$PNPM_SCRIPT_SRC_DIR\""
 	},
 	"dependencies": {
-		"clsx": "^2.1.1",
-		"tailwind-merge": "^3.4.0",
-		"tailwind-variants": "^3.2.2",
-		"tw-animate-css": "^1.3.8"
+		"clsx": "catalog:",
+		"tailwind-merge": "catalog:",
+		"tailwind-variants": "catalog:",
+		"tw-animate-css": "catalog:"
 	},
 	"devDependencies": {
 		"@acme/state": "workspace:*",
 		"@internationalized/date": "^3.10.1",
-		"@lucide/svelte": "^0.561.0",
-		"bits-ui": "^2.14.4",
+		"@lucide/svelte": "catalog:",
+		"bits-ui": "catalog:",
 		"shadcn-svelte": "catalog:",
 		"svelte": "catalog:",
-		"tailwindcss": "catalog:"
+		"tailwindcss": "catalog:",
+		"@tailwindcss/vite": "catalog:",
+		"tailwind-variants": "catalog:",
+		"tw-animate-css": "catalog:"
 	}
 }

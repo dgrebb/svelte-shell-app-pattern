@@ -25,13 +25,14 @@
 		"@tailwindcss/vite": "catalog:",
 		"@types/node": "catalog:",
 		"@vitest/browser-playwright": "catalog:",
-		"bits-ui": "^2.14.4",
+		"bits-ui": "catalog:",
 		"mode-watcher": "catalog:",
 		"playwright": "catalog:",
 		"shadcn-svelte": "catalog:",
 		"svelte": "catalog:",
-		"tailwind-variants": "^3.2.2",
+		"tailwind-variants": "catalog:",
 		"tailwindcss": "catalog:",
+		"tw-animate-css": "catalog:",
 		"vite": "catalog:",
 		"vitest": "catalog:",
 		"vitest-browser-svelte": "catalog:"
@@ -41,7 +42,7 @@
 		"@acme/feature-beta": "workspace:*",
 		"@acme/state": "workspace:*",
 		"@acme/ui": "workspace:*",
-		"clsx": "^2.1.1",
-		"tailwind-merge": "^3.4.0"
+		"clsx": "catalog:",
+		"tailwind-merge": "catalog:"
 	}
 }
