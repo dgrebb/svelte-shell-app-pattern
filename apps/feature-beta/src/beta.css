@@ -1,0 +1,9 @@
+.app-beta {
+	--primary: oklch(76.684% 0.1393 73.437);
+	--primary-foreground: oklch(0.205 0 0);
+}
+
+.dark .app-beta {
+	--primary: oklch(57.782% 0.12526 69.821);
+	--primary-foreground: oklch(0.985 0 0);
+}

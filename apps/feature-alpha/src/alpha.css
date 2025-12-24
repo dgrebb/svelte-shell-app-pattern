@@ -1,0 +1,9 @@
+.app-alpha {
+	--primary: oklch(56.63% 0.24 301.838);
+	--primary-foreground: oklch(0.985 0 0);
+}
+
+.dark .app-alpha {
+	--primary: oklch(39.782% 0.21516 297.734);
+	--primary-foreground: oklch(94.611% 0.00011 271.152);
+}
