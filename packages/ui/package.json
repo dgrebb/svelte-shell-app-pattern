@@ -1,9 +1,70 @@
 {
-  "name": "@acme/ui",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "exports": {
-    "./TeamStatus.svelte": "./src/TeamStatus.svelte"
-  }
+	"name": "@acme/ui",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"peerDependencies": {
+		"svelte": "catalog:"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.d.ts"
+		},
+		"./Avatar": "./src/lib/components/ui/avatar/index.ts",
+		"./Breadcrumb": "./src/lib/components/ui/breadcrumb/index.ts",
+		"./Button": "./src/lib/components/ui/button/index.ts",
+		"./Card": "./src/lib/components/ui/card/index.ts",
+		"./Collapsible": "./src/lib/components/ui/collapsible/index.ts",
+		"./Dialog": "./src/lib/components/ui/dialog/index.ts",
+		"./Drawer": "./src/lib/components/ui/drawer/index.ts",
+		"./Dropdown": "./src/lib/components/ui/dropdown/index.ts",
+		"./HoverCard": "./src/lib/components/ui/hover-card/index.ts",
+		"./Input": "./src/lib/components/ui/input/index.ts",
+		"./Label": "./src/lib/components/ui/label/index.ts",
+		"./Menubar": "./src/lib/components/ui/menubar/index.ts",
+		"./NavigationMenu": "./src/lib/components/ui/navigation-menu/index.ts",
+		"./Popover": "./src/lib/components/ui/popover/index.ts",
+		"./Progress": "./src/lib/components/ui/progress/index.ts",
+		"./ScrollArea": "./src/lib/components/ui/scroll-area/index.ts",
+		"./Select": "./src/lib/components/ui/select/index.ts",
+		"./Separator": "./src/lib/components/ui/separator/index.ts",
+		"./Sheet": "./src/lib/components/ui/sheet/index.ts",
+		"./Sidebar": "./src/lib/components/ui/sidebar/index.ts",
+		"./Slider": "./src/lib/components/ui/slider/index.ts",
+		"./Switch": "./src/lib/components/ui/switch/index.ts",
+		"./Tabs": "./src/lib/components/ui/tabs/index.ts",
+		"./Textarea": "./src/lib/components/ui/textarea/index.ts",
+		"./Toast": "./src/lib/components/ui/toast/index.ts",
+		"./Toggle": "./src/lib/components/ui/toggle/index.ts",
+		"./DropdownMenu": "./src/lib/components/ui/dropdown-menu/index.ts",
+		"./TeamStatus": "./src/lib/components/TeamStatus/index.ts",
+		"./hooks/is-mobile": "./src/lib/hooks/is-mobile.svelte.ts",
+		"./hooks/use-sidebar": "./src/lib/hooks/use-sidebar.svelte.ts",
+		"./utils": "./src/lib/utils/index.ts",
+		"./default.css": "./src/lib/default.css"
+	},
+	"scripts": {
+		"format": "pnpm -w exec prettier --write \"$PNPM_SCRIPT_SRC_DIR\"",
+		"lint": "pnpm -w exec prettier --check \"$PNPM_SCRIPT_SRC_DIR\" ; pnpm -w exec eslint --format stylish --max-warnings 0 \"$PNPM_SCRIPT_SRC_DIR\"",
+		"check": "pnpm -w exec svelte-check --workspace \"$PNPM_SCRIPT_SRC_DIR\" --tsconfig \"$PNPM_SCRIPT_SRC_DIR/tsconfig.json\"",
+		"shad": "pnpm dlx shadcn-svelte@latest add --cwd \"$PNPM_SCRIPT_SRC_DIR\""
+	},
+	"dependencies": {
+		"clsx": "catalog:",
+		"tailwind-merge": "catalog:",
+		"tailwind-variants": "catalog:",
+		"tw-animate-css": "catalog:"
+	},
+	"devDependencies": {
+		"@acme/state": "workspace:*",
+		"@internationalized/date": "^3.10.1",
+		"@lucide/svelte": "catalog:",
+		"bits-ui": "catalog:",
+		"shadcn-svelte": "catalog:",
+		"svelte": "catalog:",
+		"tailwindcss": "catalog:",
+		"@tailwindcss/vite": "catalog:",
+		"tailwind-variants": "catalog:",
+		"tw-animate-css": "catalog:"
+	}
 }

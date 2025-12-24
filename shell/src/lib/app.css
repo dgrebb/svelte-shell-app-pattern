@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import '@acme/ui/default.css';
+
+@source '../**/*.{svelte,ts,js}';
+@source '../../../apps/**/*.{svelte,ts,js}';
+@source '../../../packages/**/*.{svelte,ts,js}';

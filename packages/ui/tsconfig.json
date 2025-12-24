@@ -1,0 +1,14 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"src/lib": ["./src/lib"],
+			"src/lib/*": ["./src/lib/*"],
+			"src/lib/utils": ["./src/lib/utils/index.ts"],
+			"src/lib/utils.js": ["./src/lib/utils/index.ts"]
+		}
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
+}

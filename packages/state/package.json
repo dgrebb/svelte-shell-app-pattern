@@ -1,9 +1,24 @@
 {
-  "name": "@acme/state",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "exports": {
-    ".": "./index.svelte.ts"
-  }
+	"name": "@acme/state",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"types": "./state.d.ts",
+	"peerDependencies": {
+		"svelte": "catalog:"
+	},
+	"scripts": {
+		"format": "pnpm -w exec prettier --write \"$PNPM_SCRIPT_SRC_DIR\"",
+		"lint": "pnpm -w exec prettier --check \"$PNPM_SCRIPT_SRC_DIR\" ; pnpm -w exec eslint --format stylish --max-warnings 0 \"$PNPM_SCRIPT_SRC_DIR\"",
+		"check": "pnpm -w exec tsc -p \"$PNPM_SCRIPT_SRC_DIR/tsconfig.json\" --noEmit"
+	},
+	"devDependencies": {
+		"svelte": "catalog:"
+	},
+	"exports": {
+		".": {
+			"types": "./state.d.ts",
+			"default": "./state.svelte.ts"
+		}
+	}
 }
